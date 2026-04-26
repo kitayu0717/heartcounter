@@ -2,6 +2,20 @@
 <html>
 <head>
   <title>ハートカウンター</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 100px;
+    }
+
+    button {
+      font-size: 50px;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ff4d6d">
 </head>
@@ -11,10 +25,12 @@
 <button onclick="addHeart()">❤️</button>
 
 <script>
-let count = 0;
+let count = localStorage.getItem("count") || 0;
+document.getElementById("count").textContent = count;
 
 function addHeart() {
   count++;
+  localStorage.setItem("count", count);
   document.getElementById("count").textContent = count;
 }
 </script>
