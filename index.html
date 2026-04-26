@@ -23,6 +23,7 @@
 
 <h1 id="count">0</h1>
 <button onclick="addHeart()">❤️</button>
+<button onclick="resetCount()">リセット</button>
 
 <script>
 let count = localStorage.getItem("count") || 0;
@@ -30,6 +31,12 @@ document.getElementById("count").textContent = count;
 
 function addHeart() {
   count++;
+  localStorage.setItem("count", count);
+  document.getElementById("count").textContent = count;
+}
+
+function resetCount() {
+  count = 0;
   localStorage.setItem("count", count);
   document.getElementById("count").textContent = count;
 }
