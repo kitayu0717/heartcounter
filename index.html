@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ハートカウンター</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff4d6d">
+</head>
+<body>
+
+<h1 id="count">0</h1>
+<button onclick="addHeart()">❤️</button>
+
+<script>
+let count = 0;
+
+function addHeart() {
+  count++;
+  document.getElementById("count").textContent = count;
+}
+</script>
+
+</body>
+</html>
